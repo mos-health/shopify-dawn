@@ -15,9 +15,9 @@
 {%- endstyle -%}
 
 {%- liquid
-  assign frontend_url = section.settings.mod_frontend_url | default: 'https://staging-shopify.modsealth.com'
+  assign frontend_url = section.settings.mos_frontend_url | default: 'https://moshealth.com'
 
-  # Build MOD logout URL that redirects back to Shopify logout
+  # Build Mos Health logout URL that redirects back to Shopify logout
   assign shop_domain = shop.permanent_domain | default: shop.domain
   assign shopify_logout_url = 'https://' | append: shop_domain | append: routes.account_logout_url
   assign encoded_shopify_logout = shopify_logout_url | url_encode
@@ -166,10 +166,10 @@
   "settings": [
     {
       "type": "text",
-      "id": "mod_frontend_url",
-      "label": "MOD Frontend URL",
-      "default": "https://staging-shopify.moshealth.com",
-      "info": "The base URL of the MOD frontend application for logout sync"
+      "id": "mos_frontend_url",
+      "label": "Mos Health Frontend URL",
+      "default": "https://moshealth.com",
+      "info": "The base URL of the Mos Health frontend application for logout sync"
     },
     {
       "type": "header",
